@@ -1,2 +1,4 @@
-# Shiny---Analyse-et-apprentissage-supervise
-# Dashboard-Shiny
+# Dashboard Shiny - Analyses et apprentissage supervisé
+
+Lien du Dashboard : 
+https://mohamed-merzouk.shinyapps.io/projetshiny/
