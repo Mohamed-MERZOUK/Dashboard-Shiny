@@ -7,6 +7,9 @@ library(psych)
 
 
 set.seed(1)
+source('./functions/description.R')
+
+
 
 
 originalData = read.csv('./bankMarketing.csv', sep=";")
@@ -136,9 +139,11 @@ plot_bivariate <- function(variable1, variable2, xlabel, ylabel,var_type1="quant
   else{
     
     if(var_type1!=var_type2){
+
+      print("quali qanti")
       
-      print(variable1)
-      print(variable2)
+      # print(variable1)
+      # print(variable2)
       
       names(variable1)[1] <- "col1"
       names(variable2)[1] <- "col2"
@@ -164,7 +169,7 @@ plot_bivariate <- function(variable1, variable2, xlabel, ylabel,var_type1="quant
     else{
       
       if(var_type1=="qualitative" && var_type2 == "qualitative") {
-        
+        print("qanti qanti")
         df <- cbind(variable1, variable2)
         names(df)[1] <- "col1"
         names(df)[2] <- "col2"
@@ -246,7 +251,7 @@ plot_subscribers_qualitatives <- function(subscribers, notSubscribers) {
   var1 = as.data.frame(table(subscribers)) 
   var2 = as.data.frame(table(notSubscribers)) 
   
-  print(var)
+  # print(var)
   fig <- plot_ly()
   fig <- fig %>% add_pie(data = var1, labels = ~subscribers, values = ~Freq,
                          name = "Subscriber", domain = list(row = 0, column = 0 )
